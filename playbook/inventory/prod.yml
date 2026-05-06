@@ -1,0 +1,25 @@
+---
+all:
+  hosts:
+    ubuntu:
+      ansible_host: ansible-ubuntu
+      ansible_connection: docker
+    rocky:
+      ansible_host: ansible-rocky
+      ansible_connection: docker
+    debian:
+      ansible_host: ansible-debian
+      ansible_connection: docker
+  children:
+    deb:
+      hosts:
+        ubuntu:
+        debian:
+    el:
+      hosts:
+        rocky:
+    local:
+      hosts:
+        localhost:
+          ansible_connection: local
+          

@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  ubuntu:
+    image: ubuntu:24.04
+    container_name: ansible-ubuntu
+    command: sleep infinity
+    restart: unless-stopped
+
+  rocky:
+    image: rockylinux:9
+    container_name: ansible-rocky
+    command: sleep infinity
+    restart: unless-stopped
+
+  debian:
+    image: debian:11
+    container_name: ansible-debian
+    command: sleep infinity
+    restart: unless-stopped
